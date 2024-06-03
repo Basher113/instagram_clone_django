@@ -1,0 +1,9 @@
+{% extends 'instagram_home/base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        <h1>Author: {{post.username}}</h1>
+        <p>CONTENT: {{post.content}}</p>
+        <p>Caption: {{post.caption}}</p>
+    {% endfor %}
+{% endblock %}
