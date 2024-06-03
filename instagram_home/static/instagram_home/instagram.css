@@ -1,0 +1,250 @@
+.hero {
+    margin-top: 20px;
+    display: inline-block;
+    align-items: start;
+    width: 700px;
+    vertical-align: top;
+}
+
+.my-days-container {
+    display: flex;
+    max-width: 500px;
+    margin-bottom: 30px;
+    margin-right: 150px;
+    
+}
+
+.my-day-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 8px;
+}
+
+.my-day-container img {
+    width: 63px;
+    padding: 2px;
+    border-radius: 34px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid lightpink;
+}
+
+.my-day-container .username {
+    font-size: 12px;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+}
+
+.post-container {
+    display: flex;
+    flex-direction: column;
+    width: 470px;
+    height: 833px;
+    margin-bottom: 30px;
+}
+
+.first-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.profile-container {
+    margin-right: 10px;
+}
+
+.profile-in-post {
+    height: 36px;
+    padding: 2px;
+    border-radius: 24px;
+    border: 2px solid lightpink;
+}
+
+.first-column {
+    display: flex;
+}
+
+.nested-column {
+    display: flex;
+    flex-direction: column;
+    margin-right: 6px;
+}
+
+.author-username {
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.verified-icon {
+    height: 15px;
+}
+
+.other-info {
+    font-size: 11px;
+    color: rgb(56, 56, 56);
+}
+
+.second-nested-column {
+    display: flex;
+    flex: 1;
+}
+
+.dot-separator {
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+.post-time {
+    font-size: 13px;
+    margin-top: 2px;
+    color: rgb(51, 51, 51);
+}
+
+
+.post-photo {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    background-color: black;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.post-photo img {
+    max-width: 100%;
+    height: 600px;
+    object-fit: cover;
+    box-shadow: -3px 2px  rgba(0, 0, 0, 0.13) ;
+}
+
+.bottom-row-first-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 13px;
+}
+
+.like-comment-share-icon-container img {
+    height: 22px;
+    margin-right: 15px;
+}
+
+.bookmark-icon {
+    height: 22px;
+}
+
+.likes-count {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.author-and-caption {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.author-and-caption .author-username {
+    font-size: 15px;
+    font-weight: 500;
+    margin-right: 6px;
+}
+
+.post-caption {
+    font-size: 14px;
+}
+
+.more {
+    font-size: 14px;
+    color: rgb(104, 104, 104);
+    margin-bottom: 10px;
+}
+
+.view-all-comment {
+    font-size: 14px;
+    color: rgb(104, 104, 104);
+    margin-bottom: 5px;
+}
+
+.comment-form {
+    display: flex;
+}
+
+.comment-input{
+    font-size: 14px;
+    border: none;
+    flex: 1;
+}
+
+.comment-input:focus {
+    outline: none;
+}
+
+
+.right-section-container {
+    display: flex;
+    flex-direction: column;
+    vertical-align: top;
+    width: 320px;
+    position: absolute;
+}
+
+.right-section-profile-container {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+.right-section-profile-picture {
+    width: 40px;
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 25px;
+}
+
+.username-column {
+    margin-left: 10px;
+    flex: 1;
+}
+
+.username-column div {
+    font-size: 12px;
+    margin-bottom: -3px;
+    color: rgb(105, 105, 105);
+    text-wrap: nowrap;
+}
+
+.username-column .right-section-username {
+    font-weight: 500;
+    font-size: 15px;
+    color: black;
+}
+
+.switch-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: rgb(2, 181, 252);
+}
+
+.right-section-suggested-for-you-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+}
+
+.suggested-for-you {
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(119, 119, 119);
+}
+
+.see-all-button {
+    font-size: 14px;
+    font-weight: 500;
+}

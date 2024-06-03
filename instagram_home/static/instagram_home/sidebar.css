@@ -1,0 +1,61 @@
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 320px;
+    border-right: 1px solid rgb(202, 202, 202);
+    background-color: rgb(252, 252, 252);
+}
+
+.logo {
+    margin: 40px 12px 40px 20px;
+}
+
+.logo-icon {
+    height: 30px;
+}
+
+.sidebar-links-middle {
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: space-evenly;
+    height: 450px;
+    margin-left: 20px;
+    margin-bottom: 240px;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+    margin-right: 10px;
+    height: 50px;
+}
+
+.sidebar-link img {
+    height: 28px;
+    margin-right: 15px;
+}
+
+.sidebar-link .messages-icon,
+.sidebar-link .notifications-icon,
+.sidebar-link .create-icon {
+    height: 24px;
+}
+
+.sidebar-link .active {
+    font-weight: 700;
+}
+
+.sidebar-link .profile-pic {
+    height: 27;
+    border-radius: 50%;
+}
+
+.sidebar-links-down {
+    margin-left: 20px;
+}

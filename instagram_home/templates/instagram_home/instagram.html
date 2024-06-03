@@ -1,9 +1,177 @@
 {% extends 'instagram_home/base.html' %}
+{% load static %}
 
 {% block content %}
-    {% for post in posts %}
-        <h1>Author: {{post.username}}</h1>
-        <p>CONTENT: {{post.content}}</p>
-        <p>Caption: {{post.caption}}</p>
-    {% endfor %}
+     <div class="posts">
+        <div class="post-container">
+
+            <div class="first-row">
+                <div class="profile-container">
+                    <img src="{% static 'images/439659973_1165044731319939_8833563330931368843_n.jpg' %}" alt="" class="profile-in-post">
+                </div>
+
+                <div class="first-column">
+                    <div class="nested-column">
+                        <div class="author-username">ivestarship <img src="{% static 'icons/social-media.png' %}" alt="" class="verified-icon"> </div>
+                        <div class="other-info">Original audio</div>
+                    </div>
+                    
+                    <div class="second-nested-column">
+                        <div class="dot-separator">&#xB7;</div>
+                        <div class="post-time">1d</div>
+                    </div>
+
+                    <div><strong>&#xB7;&#xB7;&#xB7;</strong></div>
+                    
+                </div>
+            </div>
+
+            <div class="post-photo">
+                <img src="{% static 'images/ive-rei-photo-phone-wallpaper-4k-uhdpaper.com-404@0@e.jpg' %}" alt="">
+            </div>
+
+            <div class="bottom-row">
+                <div class="bottom-row-first-row">
+                    <div class="like-comment-share-icon-container">
+                        <img src="{% static 'icons/heart.svg' %}" alt="">
+                        <img src="{% static 'icons/chat.svg' %}" alt="">
+                        <img src="{% static 'icons/send.svg' %}" alt="">
+                    </div>
+                    
+                    <div class="save-icon-conatiner">
+                        <img src="icons/bookmark.svg" alt="" class="bookmark-icon">
+                    </div>
+                </div>
+
+                <div class="likes-count">106,850 likes</div>
+
+                <div class="author-and-caption">
+                    <div class="author-username">ivestarship <img src="icons/social-media.png" alt="" class="verified-icon"> </div>
+                    <div class="post-caption">`IVE'S WEEK` DAY 5 🌹</div>
+                </div>
+
+                <div class="more">... more</div>
+
+                <div class="view-all-comment">View all 381 comments</div>
+                <div class="comment-form">
+                    <input type="text" placeholder="Add a comment" class="comment-input">
+                    <img src="icons/emoji-smile (1).svg" alt="" height="14px">
+                </div>
+                <hr>
+            </div>
+            
+        </div>
+
+        <div class="post-container">
+
+            <div class="first-row">
+                <div class="profile-container">
+                    <img src="{% static 'images/439659973_1165044731319939_8833563330931368843_n.jpg' %}" alt="" class="profile-in-post">
+                </div>
+
+                <div class="first-column">
+                    <div class="nested-column">
+                        <div class="author-username">ivestarship <img src="{% static 'icons/social-media.png' %}" alt="" class="verified-icon"> </div>
+                        <div class="other-info">Original audio</div>
+                    </div>
+                    
+                    <div class="second-nested-column">
+                        <div class="dot-separator">&#xB7;</div>
+                        <div class="post-time">1d</div>
+                    </div>
+
+                    <div><strong>&#xB7;&#xB7;&#xB7;</strong></div>
+                    
+                </div>
+            </div>
+
+            <div class="post-photo">
+                <img src="{% static 'images/ive-rei-photo-phone-wallpaper-4k-uhdpaper.com-404@0@e.jpg' %}" alt="">
+            </div>
+
+            <div class="bottom-row">
+                <div class="bottom-row-first-row">
+                    <div class="like-comment-share-icon-container">
+                        <img src="{% static 'icons/heart.svg' %}" alt="">
+                        <img src="{% static 'icons/chat.svg' %}" alt="">
+                        <img src="{% static 'icons/send.svg' %}" alt="">
+                    </div>
+                    
+                    <div class="save-icon-conatiner">
+                        <img src="icons/bookmark.svg" alt="" class="bookmark-icon">
+                    </div>
+                </div>
+
+                <div class="likes-count">106,850 likes</div>
+
+                <div class="author-and-caption">
+                    <div class="author-username">ivestarship <img src="icons/social-media.png" alt="" class="verified-icon"> </div>
+                    <div class="post-caption">`IVE'S WEEK` DAY 5 🌹</div>
+                </div>
+
+                <div class="more">... more</div>
+
+                <div class="view-all-comment">View all 381 comments</div>
+                <div class="add-comment">Add a comment</div>
+            </div>
+            <hr>
+        </div>
+        
+
+        <div class="post-container">
+
+            <div class="first-row">
+                <div class="profile-container">
+                    <img src="{% static 'images/439659973_1165044731319939_8833563330931368843_n.jpg' %}" alt="" class="profile-in-post">
+                </div>
+
+                <div class="first-column">
+                    <div class="nested-column">
+                        <div class="author-username">ivestarship <img src="{% static 'icons/social-media.png' %}" alt="" class="verified-icon"> </div>
+                        <div class="other-info">Original audio</div>
+                    </div>
+                    
+                    <div class="second-nested-column">
+                        <div class="dot-separator">&#xB7;</div>
+                        <div class="post-time">1d</div>
+                    </div>
+
+                    <div><strong>&#xB7;&#xB7;&#xB7;</strong></div>
+                    
+                </div>
+            </div>
+
+            <div class="post-photo">
+                <img src="images/ive-rei-photo-phone-wallpaper-4k-uhdpaper.com-404@0@e.jpg" alt="">
+            </div>
+
+            <div class="bottom-row">
+                <div class="bottom-row-first-row">
+                    <div class="like-comment-share-icon-container">
+                        <img src="{% static 'icons/heart.svg' %}" alt="">
+                        <img src="{% static 'icons/chat.svg' %}" alt="">
+                        <img src="{% static 'icons/send.svg' %}" alt="">
+                    </div>
+                    
+                    <div class="save-icon-conatiner">
+                        <img src="icons/bookmark.svg" alt="" class="bookmark-icon">
+                    </div>
+                </div>
+
+                <div class="likes-count">106,850 likes</div>
+
+                <div class="author-and-caption">
+                    <div class="author-username">ivestarship <img src="icons/social-media.png" alt="" class="verified-icon"> </div>
+                    <div class="post-caption">`IVE'S WEEK` DAY 5 🌹</div>
+                </div>
+
+                <div class="more">... more</div>
+
+                <div class="view-all-comment">View all 381 comments</div>
+                <div class="add-comment">Add a comment</div>
+            </div>
+            <hr>
+
+        </div>
+    </div>
 {% endblock %}
