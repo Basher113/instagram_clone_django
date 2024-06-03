@@ -1,6 +1,5 @@
 {% extends 'instagram_home/base.html' %}
 {% load static %}
-{% load humanize %}
 
 {% block content %}
 
@@ -60,9 +59,10 @@
     <!-- SIDEBAR END -->
 
     <!-- MY DAYS START -->
+
     <div class="hero">
 
-        <div class="my-days-container">
+        <div class="my-days-container ">
 
             <div class="my-day-container">
                 <img src="{% static 'images/420606814_969867681428652_940048764839128859_n.jpg' %}" alt="">
@@ -111,112 +111,119 @@
     </div>
     <!-- MY DAYS END -->
 
+    
+    <div class="right-section-relative">
+        <div class="container">
+            <div class="right-section-container">
+                <div class="right-section-profile-container">
+                    <div class="right-section-image-container">
+                        <img src="{% static 'images/profile.jpg' %}" alt="" class="right-section-profile-picture">
+                    </div>
 
-    <div style="display: inline-block; position: relative;">
-        <div class="right-section-container">
-            <div class="right-section-profile-container">
-                <div class="right-section-image-container">
-                    <img src="{% static 'images/profile.jpg' %}" alt="" class="right-section-profile-picture">
+                    <div class="username-column">
+                        <div class="right-section-username">basherkalim</div>
+                        <div>Basher Kalim</div>
+                    </div>
+
+                    <div class="switch-button">Switch</div>
                 </div>
 
-                <div class="username-column">
-                    <div class="right-section-username">basherkalim</div>
-                    <div>Basher Kalim</div>
+                <div class="right-section-suggested-for-you-container">
+                    <div class="suggested-for-you">Suggested for you</div>
+
+                    <div class="see-all-button">See all</div>
                 </div>
-
-                <div class="switch-button">Switch</div>
-            </div>
-
-            <div class="right-section-suggested-for-you-container">
-                <div class="suggested-for-you">Suggested for you</div>
-
-                <div class="see-all-button">See all</div>
-            </div>
-
-            <div class="right-section-profile-container">
-                <div class="right-section-image-container">
-                    <img src="{% static 'images/436485053_999003375135309_3786298911098470059_n.jpg' %}" alt="" class="right-section-profile-picture">
-                </div>
-                
-                <div class="username-column">
-                    <div class="right-section-username">_jlncsndr</div>
-                    <div>Suggested for you</div>
-                </div>
-
-                <div class="switch-button">Follow</div>
-            </div>
-
-            <div class="right-section-profile-container">
-                <div class="right-section-image-container">
-                    <img src="{% static 'images/447151494_1166708644460167_7237363820159379725_n.jpg' %}" alt="" class="right-section-profile-picture">
-                </div>
-                
-                <div class="username-column">
-                    <div class="right-section-username">da_unknown_kid</div>
-                    <div>Followed by shaib.jakaria</div>
-                </div>
-
-                <div class="switch-button">Follow</div>
-            </div>
-
-            
-            <div class="right-section-profile-container">
-                <div class="right-section-image-container">
-                    <img src="{% static 'images/447213905_1950093075420243_2251634874262426674_n.jpg' %}" alt="" class="right-section-profile-picture">
-                </div>
-                
-                <div class="username-column">
-                    <div class="right-section-username">zserujj</div>
-                    <div>New to Instagram</div>
-                </div>
-
-                <div class="switch-button">Follow</div>
-            </div>
 
                 <div class="right-section-profile-container">
-                <div class="right-section-image-container">
-                    <img src="{% static 'images/340325531_1356356961764926_5069269893365079367_n.jpg' %}" alt="" class="right-section-profile-picture">
+                    <div class="right-section-image-container">
+                        <img src="{% static 'images/436485053_999003375135309_3786298911098470059_n.jpg' %}" alt="" class="right-section-profile-picture">
+                    </div>
+                    
+                    <div class="username-column">
+                        <div class="right-section-username">_jlncsndr</div>
+                        <div>Suggested for you</div>
+                    </div>
+
+                    <div class="switch-button">Follow</div>
                 </div>
+
+                <div class="right-section-profile-container">
+                    <div class="right-section-image-container">
+                        <img src="{% static 'images/447151494_1166708644460167_7237363820159379725_n.jpg' %}" alt="" class="right-section-profile-picture">
+                    </div>
+                    
+                    <div class="username-column">
+                        <div class="right-section-username">da_unknown_kid</div>
+                        <div>Followed by shaib.jakaria</div>
+                    </div>
+
+                    <div class="switch-button">Follow</div>
+                </div>
+
                 
-                <div class="username-column">
-                    <div class="right-section-username">dadakalimm</div>
-                    <div>Suggested for you</div>
+                <div class="right-section-profile-container">
+                    <div class="right-section-image-container">
+                        <img src="{% static 'images/447213905_1950093075420243_2251634874262426674_n.jpg' %}" alt="" class="right-section-profile-picture">
+                    </div>
+                    
+                    <div class="username-column">
+                        <div class="right-section-username">zserujj</div>
+                        <div>New to Instagram</div>
+                    </div>
+
+                    <div class="switch-button">Follow</div>
                 </div>
 
-                <div class="switch-button">Follow</div> 
+                    <div class="right-section-profile-container">
+                    <div class="right-section-image-container">
+                        <img src="{% static 'images/340325531_1356356961764926_5069269893365079367_n.jpg' %}" alt="" class="right-section-profile-picture">
+                    </div>
+                    
+                    <div class="username-column">
+                        <div class="right-section-username">dadakalimm</div>
+                        <div>Suggested for you</div>
+                    </div>
+
+                    <div class="switch-button">Follow</div> 
+                </div>
+
+                <div class="right-section-profile-container">
+                    <div class="right-section-image-container">
+                        <img src="{% static 'images/447213905_1950093075420243_2251634874262426674_n.jpg' %}" alt="" class="right-section-profile-picture">
+                    </div>
+                    
+                    <div class="username-column">
+                        <div class="right-section-username">zserujj</div>
+                        <div>New to Instagram</div>
+                    </div>
+
+                    <div class="switch-button">Follow</div>
+                </div>
+
+                <div class="right-section-profile-container">
+                    <div class="right-section-image-container">
+                        <img src="{% static 'images/446219368_1958229714592931_3703952881410213261_n.jpg' %}" alt="" class="right-section-profile-picture">
+                    </div>
+                    
+                    <div class="username-column">
+                        <div class="right-section-username">cristianajsu</div>
+                        <div>Suggested for you</div>
+                    </div>
+
+                    <div class="switch-button">Follow</div> 
+                </div>
+
+
             </div>
-
-            <div class="right-section-profile-container">
-                <div class="right-section-image-container">
-                    <img src="{% static 'images/447213905_1950093075420243_2251634874262426674_n.jpg' %}" alt="" class="right-section-profile-picture">
-                </div>
-                
-                <div class="username-column">
-                    <div class="right-section-username">zserujj</div>
-                    <div>New to Instagram</div>
-                </div>
-
-                <div class="switch-button">Follow</div>
-            </div>
-
-            <div class="right-section-profile-container">
-                <div class="right-section-image-container">
-                    <img src="{% static 'images/446219368_1958229714592931_3703952881410213261_n.jpg' %}" alt="" class="right-section-profile-picture">
-                </div>
-                
-                <div class="username-column">
-                    <div class="right-section-username">cristianajsu</div>
-                    <div>Suggested for you</div>
-                </div>
-
-                <div class="switch-button">Follow</div> 
-            </div>
-
-
         </div>
     </div>
+
+    
+    <!-- POSTS SECTION  -->
      <div class="posts">
 
+        
+    
         {% for post in posts %}
             <div class="post-container">
 
@@ -241,7 +248,7 @@
                 </div>
 
                 <div class="post-photo">
-                    <img src={{post.content.url}} alt="">
+                    <img src={{post.content.url}} alt="" class="object-fit-contain">
                 </div>
 
                 <div class="bottom-row">
@@ -276,7 +283,7 @@
                 
             </div>
         {% endfor %}
-
+       
         <div class="post-container">
 
             <div class="first-row">

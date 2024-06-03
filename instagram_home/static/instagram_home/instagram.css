@@ -194,6 +194,11 @@
     outline: none;
 }
 
+.right-section-relative {
+    display: inline-block;
+    position: relative;
+}
+
 
 .right-section-container {
     display: flex;
@@ -257,4 +262,16 @@
 .see-all-button {
     font-size: 14px;
     font-weight: 500;
+}
+
+
+@media (max-width: 1645px) {
+
+    .right-section-relative {
+        display: none !important;
+    }
+
+    .right-section-container {
+        display: none !important;
+    }
 }
