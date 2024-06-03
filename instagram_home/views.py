@@ -10,6 +10,10 @@ def home(request):
 
     return render(request, 'instagram_home/instagram.html', context)
 
-
 def about(request):
     return render(request, 'instagram_home/about.html')
+
+def login_page(request):
+    return render(request, 'instagram_home/login_page.html')
+
+

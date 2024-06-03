@@ -1,0 +1,51 @@
+{% extends 'instagram_home/base.html' %}
+{% load static %}
+
+{% block styles %} 
+
+    <link rel="stylesheet" href="{% static 'instagram_home/login.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="both-section-container">
+        <div class="left-section">
+            <img src="{% static 'images/iphone.png' %}" alt="">
+        </div>
+
+        <div class="right-section">
+            <div class="right-section-column1">
+                <img src="{% static 'icons/instagram-text-icon.png' %}" alt="" class="instagram-text-icon">
+                <form action="">
+                    <input type="text" placeholder="Username">
+                    <input type="text" placeholder="Password">
+                    <button class="btn btn-primary login-button">Login</button>
+                </form>
+
+                <span class="with-line">OR</span>
+
+                <div class="login-with-facebook">
+                    <img src="{% static 'icons/facebook.png' %}" alt="" class="facebook-icon">
+                    <div>Log in with facebook</div>
+                </div>
+
+                <div class="forgot-password">Forgot password?</div>
+            </div>
+
+            <div class="right-section-column2">
+                <div>Don't have an account? </div>
+                <a href="" class="text text-primary text-decoration-none">Signup</a>
+            </div>
+
+            <div class="text text-center">Get the app.</div>
+
+            <div class="right-bottom-section">
+                <a target="_blank" href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=ig_mid%3D32AAEFB8-C1E2-4436-8197-9E92129613D9%26utm_campaign%3DloginPage%26utm_content%3Dlo%26utm_source%3Dinstagramweb%26utm_medium%3Dbadge"><img src="{% static 'images/c5Rp7Ym-Klz.png' %}" alt=""></a>
+                <img src="{% static 'images/EHY6QnZYdNX.png' %}" alt="">
+            </div>
+        </div>
+        
+
+    </div>
+
+{% endblock %}

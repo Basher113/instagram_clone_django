@@ -1,0 +1,120 @@
+
+.both-section-container {
+    display: flex;
+    align-items: start;
+    margin-top: 150px;
+}
+
+
+.left-section {
+    margin-right: 30px;
+}
+
+.right-section-column1 {
+    padding: 59px 70px 20px 70px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.instagram-text-icon {
+    height: 50px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form input {
+    width: 250px;
+    padding: 6px 0 6px 8px;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 12px;
+    border: 1px solid rgb(219, 219, 219);
+    background-color: rgba(255, 255, 255, 0.685);
+    border-radius: 4px;
+}
+
+form input:focus {
+    outline: none;
+}
+
+.login-button {
+    width: 100%;
+    background-color: (0, 149, 246);
+    margin-top: 5px;
+    border: none;
+}
+
+.with-line {
+    display: block;
+    color: #c7c7c7;
+    margin: 15px 0 10px 0;
+}
+
+.with-line:before,
+.with-line:after {
+    content: "";
+    display: inline-block;
+    border-top: 1px solid #c7c7c7;
+    width: 6.4em;
+    vertical-align: middle;
+    margin: 0 0.3em;
+    color: rgb(235, 235, 235);
+}
+
+.login-with-facebook {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.facebook-icon {
+    height: 17px;
+    margin-right: 8px;
+}
+
+.login-with-facebook div {
+    font-size: 15px;
+    color: rgb(56, 81, 133)
+}
+
+.forgot-password {
+    font-size: 13px;
+    cursor: pointer;
+    margin: 15px 0;
+}
+
+.right-section-column2 {
+    display: flex;
+    margin-top: 16px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 4px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.right-section-column2 div {
+    margin-right: 5px;
+}
+
+.right-bottom-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.right-bottom-section img {
+    height: 38px;
+    margin: 0 5px;
+    border-radius: 5px;
+}
