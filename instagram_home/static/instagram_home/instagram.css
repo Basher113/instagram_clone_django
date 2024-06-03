@@ -19,6 +19,7 @@
     flex-direction: column;
     align-items: center;
     margin: 0 8px;
+    cursor: pointer;
 }
 
 .my-day-container img {
@@ -54,34 +55,36 @@
     margin-bottom: 10px;
 }
 
+.first-column {
+    display: flex;
+    flex-direction: column;
+}
+
 .profile-container {
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .profile-in-post {
-    height: 36px;
+    height: 40px;
     padding: 2px;
     border-radius: 24px;
     border: 2px solid lightpink;
 }
 
 .first-column {
-    display: flex;
-}
-
-.nested-column {
-    display: flex;
-    flex-direction: column;
-    margin-right: 6px;
+    cursor: pointer;
+    margin-right: 4px;
 }
 
 .author-username {
     font-size: 15px;
+    font-weight: 500;
     white-space: nowrap;
 }
 
 .verified-icon {
-    height: 15px;
+    height: 17px;
 }
 
 .other-info {
@@ -89,8 +92,9 @@
     color: rgb(56, 56, 56);
 }
 
-.second-nested-column {
+.second-column {
     display: flex;
+    align-items: center;
     flex: 1;
 }
 
@@ -103,6 +107,11 @@
     font-size: 13px;
     margin-top: 2px;
     color: rgb(51, 51, 51);
+    cursor: pointer;
+}
+
+.three-middle-dots {
+    cursor: pointer;
 }
 
 
