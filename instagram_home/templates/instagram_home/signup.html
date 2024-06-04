@@ -28,12 +28,26 @@
 
             <span class="with-line">OR</span>
 
-            <form action="POST" class="">
+            <form action="" method="POST" class="">
+                {% csrf_token %}
                 <fieldset>
-                    <input type="text" placeholder="Email">
-                    <input type="text" placeholder="Fullname">
-                    <input type="text" placeholder="Username">
-                    <input type="text" placeholder="Password">
+                    {% if form.errors %}
+                        {% for field in form %}
+                            {% for error in field.errors %}
+
+                                {% if forloop.first %}
+                                <div class="error-message">{% firstof field.errors %}</div>
+                                {% endif %}
+
+                            {% endfor %}
+                        {% endfor %}
+                    {% endif %}
+
+                    {{form.email}}
+                    {{form.username}}
+                    {{form.password1}}
+                    {{form.password2}}
+                    
                 </fieldset>
 
                 <div class="learn-more-container">

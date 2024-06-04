@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from datetime import datetime
 from .models import Post
-from django.contrib.auth.forms import UserCreationForm
+from .forms import UserSignupForm
 
 def home(request):
     context = {
@@ -16,7 +16,13 @@ def login_page(request):
     return render(request, 'instagram_home/login_page.html')
 
 def signup(request):
-    form = UserCreationForm()
+    if request.method == 'POST':
+        form = UserSignupForm(request.POST)
+        if form.is_valid(): 
+            form.save()
+            return redirect('home')
+    else:
+        form = UserSignupForm()
     return render(request, 'instagram_home/signup.html', {'form': form})
 
 
