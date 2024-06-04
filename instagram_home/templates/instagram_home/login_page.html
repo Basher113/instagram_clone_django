@@ -16,10 +16,12 @@
         <div class="right-section">
             <div class="right-section-column1">
                 <img src="{% static 'icons/instagram-text-icon.png' %}" alt="" class="instagram-text-icon">
-                <form action="">
-                    <input type="text" placeholder="Username">
-                    <input type="text" placeholder="Password">
-                    <button class="btn btn-primary login-button">Login</button>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{ form.username }}
+                    {{ form.password }}
+                    
+                    <button class="btn btn-primary login-button" type="submit">Login</button>
                 </form>
 
                 <span class="with-line">OR</span>

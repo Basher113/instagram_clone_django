@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from datetime import datetime
+from django.contrib.auth.decorators import login_required
 from .models import Post
 from .forms import UserSignupForm
 
+@login_required
 def home(request):
     context = {
         'posts': Post.objects.all().order_by('-id'),
@@ -11,9 +12,6 @@ def home(request):
 
 def about(request):
     return render(request, 'instagram_home/about.html')
-
-def login_page(request):
-    return render(request, 'instagram_home/login_page.html')
 
 def signup(request):
     if request.method == 'POST':
