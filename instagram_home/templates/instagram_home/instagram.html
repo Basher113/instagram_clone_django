@@ -118,11 +118,11 @@
             <div class="right-section-container">
                 <div class="right-section-profile-container">
                     <div class="right-section-image-container">
-                        <img src="{% static 'images/profile.jpg' %}" alt="" class="right-section-profile-picture">
+                        <img src={{user.profile.image.url}} alt="" class="right-section-profile-picture">
                     </div>
 
                     <div class="username-column">
-                        <div class="right-section-username">basherkalim</div>
+                        <div class="right-section-username">{{ user.username }}</div>
                         <div>Basher Kalim</div>
                     </div>
 
@@ -230,7 +230,7 @@
 
                 <div class="first-row">
                     <div class="profile-container">
-                        <img src="{% static 'images/439659973_1165044731319939_8833563330931368843_n.jpg' %}" alt="" class="profile-in-post">
+                        <img src={{post.author.profile.image.url}} alt="" class="profile-in-post">
                     </div>
 
                     <div class="first-column">
