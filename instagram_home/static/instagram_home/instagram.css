@@ -67,9 +67,11 @@
 
 .profile-in-post {
     height: 40px;
+    width: 40px;
     padding: 2px;
     border-radius: 24px;
     border: 2px solid lightpink;
+    object-fit: cover;
 }
 
 .first-column {
