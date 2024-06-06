@@ -3,7 +3,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .models import Post
-from .forms import UserSignupForm, MyAuthForm
 
 # @login_required
 def home(request):
