@@ -250,6 +250,8 @@ a {
 .switch-button {
     display: flex;
     justify-content: center;
+    background: none;
+    border: none;
     align-items: center;
     font-size: 14px;
     color: rgb(2, 181, 252);

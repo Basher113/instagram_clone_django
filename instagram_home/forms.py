@@ -16,13 +16,3 @@ class UserSignupForm(UserCreationForm):
         self.fields['username'].widget.attrs.update({'placeholder': 'Username'})
         self.fields['password1'].widget.attrs.update({'placeholder': 'Password'})
         self.fields['password2'].widget.attrs.update({'placeholder': 'Repeat Password'})
-
-class MyAuthForm(AuthenticationForm):
-    class Meta:
-        model = User
-        fields = ['username', 'password']
-
-    def __init__(self, *args, **kwargs):
-        super(MyAuthForm, self).__init__(*args, **kwargs)
-        self.fields['username'].widget.attrs.update({'placeholder': 'Username'})
-        self.fields['password'].widget.attrs.update({'placeholder': 'Password'})
