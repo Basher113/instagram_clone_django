@@ -1,65 +1,15 @@
 {% extends 'instagram_home/base.html' %}
 {% load static %}
 
+
+
 {% block content %}
 
 
     <!-- SIDEBAR START -->
-    <div class="sidebar-container">
-        <div class="logo">
-            <img src="{% static 'icons/instagram-text-icon.png' %}" alt="" class="logo-icon">
-        </div>
-
-        <div class="sidebar-links-middle">
-            <div class="sidebar-link">
-                <img src="{% static 'icons/home.svg' %}" alt="" class="home-icon">
-                <div class="active">Home</div>
-            </div>
-            <div class="sidebar-link">
-                <img src="{% static 'icons/search.svg' %}" alt="" class="search-icon">
-                <div>Search</div>
-            </div>
-            <div class="sidebar-link">
-                <img src="{% static 'icons/explore.svg' %}" alt="" class="explore-icon">
-                <div>Explore</div>
-            </div>
-            <div class="sidebar-link">
-                <img src="{% static 'icons/reel.png' %}" alt="" class="reels-icons">
-                <div>Reels</div>
-            </div>
-            <div class="sidebar-link">
-                <img src="{% static 'icons/send.svg' %}" alt="" class="messages-icon">
-                <div>Messages</div>
-            </div>
-            <div class="sidebar-link">
-                <img src="{% static 'icons/heart.svg' %}" alt="" class="notifications-icon">
-                <div>Notifications</div>
-            </div>
-            <div class="sidebar-link">
-                <img src="{% static 'icons/plus-square.svg' %}" alt="" class="create-icon">
-                <div>Create</div>
-            </div>
-            <div class="sidebar-link">
-                <img src={{user.profile.image.url}} alt="" class="profile-pic">
-                <div>Profile</div>
-            </div>
-        </div>
-
-        <div class="sidebar-links-down">
-            <div class="sidebar-link">
-                <img src="{% static 'icons/threads.svg' %}" alt="">
-                <div>Threads</div>
-            </div>
-
-            <div class="sidebar-link">
-                <img src="{% static 'icons/hamburger-menu.svg' %}" alt="">
-                <div>More</div>
-            </div>
-        </div>
         
-    </div>
     <!-- SIDEBAR END -->
-
+    {% include 'instagram_home/sidebar.html' %}
     <!-- MY DAYS START -->
     <div class="hero">
 
@@ -111,19 +61,25 @@
         
     </div>
     <!-- MY DAYS END -->
-
+   
     
     <div class="right-section-relative">
         <div class="container">
             <div class="right-section-container">
                 <div class="right-section-profile-container">
                     <div class="right-section-image-container">
+                        <a href="{% url 'profile' user.username%}">
                         <img src={{user.profile.image.url}} alt="" class="right-section-profile-picture">
+                        </a>
                     </div>
-
                     <div class="username-column">
-                        <div class="right-section-username">{{ user.username }}</div>
-                        <div>Basher Kalim</div>
+                        <a href="{% url 'profile' user.username %}" class="">
+                            <div class="right-section-username">{{ user.username }}</div>
+                        </a>
+                        <a href="{% url 'profile' user.username %}">
+                            <div>Basher Kalim</div>
+                        </a>
+                        
                     </div>
 
                     <div class="switch-button">Switch</div>
@@ -222,25 +178,28 @@
     
     <!-- POSTS SECTION  -->
      <div class="posts">
-
-        
     
         {% for post in posts %}
             <div class="post-container">
 
                 <div class="first-row">
+                    <a href="{% url 'profile' post.author.username%}">
                     <div class="profile-container">
                         <img src={{post.author.profile.image.url}} alt="" class="profile-in-post">
                     </div>
+                    </a>
 
                     <div class="first-column">
-                        <div class="author-username">{{post.author.username}} <img src="{% static 'icons/social-media.png' %}" alt="" class="verified-icon"> </div>
+                        <div class="author-username">
+                            <a href="{% url 'profile' post.author.username%}">{{post.author.username}}</a>
+                            <img src="{% static 'icons/social-media.png' %}" alt="" class="verified-icon">
+                         </div>
                     </div>
                     
                         
                     <div class="second-column">
                         <div class="dot-separator">&#xB7;</div>
-                        <div class="post-time">1d</div>
+                        <div class="post-time">1d {{post.date_posted|timesince}}</div>
                     </div>
 
                     <div class="three-middle-dots"><strong>&#xB7;&#xB7;&#xB7;</strong></div>

@@ -1,0 +1,131 @@
+body {
+    padding: 0 0 0 100px !important;
+}
+
+.container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 940px;
+}
+
+.first-row {
+    /* headers */
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.profile-image-container {
+    width: 283px;
+    padding-top: 20px;
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-image-container img {
+    height: 150px;
+    border-radius: 75px;
+}
+
+.profile-info-container {
+    flex: 1;
+}
+
+.profile-info-first-row {
+    display: flex;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.profile-info-first-row div {
+    margin-right: 40px;
+    font-size: 22px;
+}
+
+.profile-info-first-row button {
+    border: none;
+    font-size: 17px;
+    border-radius: 10px;
+}
+
+.post-followers-following-row {
+    display: flex;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.post-followers-following-row div {
+    margin-right: 30px;
+}
+
+.fullname {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.second-row {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.second-row div {
+    display: flex;
+    margin-left: 80px;
+}
+
+.plus-icon-container {
+    height: 80px;
+    width: 80px;
+    border: 1px solid rgb(202, 202, 202);
+    display: flex;
+    justify-content: center;
+    vertical-align: center;
+    border-radius: 50px;
+    background-color: rgb(248, 248, 248);
+}
+
+.plus-icon {
+    font-size: 50px;
+    color: rgb(209, 209, 209);
+}
+
+.new {
+    margin-left: 104px !important;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 9px;
+}
+
+.post-saved-taggged-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.post-saved-taggged-container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 24px;
+}
+
+.user-posts-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+
+.user-post-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+
