@@ -223,7 +223,7 @@
                         
                     <div class="second-column">
                         <div class="dot-separator">&#xB7;</div>
-                        <div class="post-time">1d {{post.date_posted|timesince}}</div>
+                        <div class="post-time">{{post.date_posted|timesince|truncatewords:'2'}}</div>
                     </div>
 
                     <div class="three-middle-dots"><strong>&#xB7;&#xB7;&#xB7;</strong></div>

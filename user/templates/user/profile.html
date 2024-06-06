@@ -65,8 +65,19 @@
 
     <div class="user-posts-container">
         {% for post in posts %}
-        <div>
+        <div class="user-post-image-container">
             <img src={{post.content.url}} alt="" class="user-post-image">
+            <div class="background-like-comment">
+                <div class="heart-fill-icon-container">
+                    <i class="bi bi-heart-fill"></i>
+                    <div text text-white>4</div>
+                </div>
+                <div class="chat-fill-icon-container">
+                    <i class="bi bi-chat-fill"></i>
+                    <div text text-white>0</div>
+                </div>
+                
+            </div>
         </div>
         {% endfor %}
     </div>
