@@ -2,16 +2,9 @@
 {% load static %}
 
 {% block styles %}
-<link rel="stylesheet" href="{% static 'instagram_home/login-modal.css' %}">
 {% endblock %}
 
 {% block content %}
-
-
-    <!-- SIDEBAR START -->
-        
-    <!-- SIDEBAR END -->
-    {% include 'instagram_home/sidebar.html' %}
     <!-- MY DAYS START -->
     <div class="hero">
 
@@ -176,32 +169,9 @@
             </div>
         </div>
     </div>
-
-
-    <div class="modal-container">
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <span class="close-button js-close-button">&times;</span>
-                <img src="{% static 'icons/instagram-text-icon.png' %}" alt="Instagram" class="logo">
-                <form method="post">
-                    {% csrf_token %}
-                    <input type="text" placeholder="username" name="username">
-                    <input type="password" placeholder="password" name="password">
-                    <div class="checkbox-container">
-                        <input type="checkbox" id="save-login">
-                        <label for="save-login">Save login info</label>
-                    </div>
-                    <button type="submit">Log in</button>
-                    <a href="#">Forgot password?</a>
-                </form>
-            </div>
-        </div>
-    </div>
-    
-
     
     <!-- POSTS SECTION  -->
-     <div class="posts">
+    <div class="posts">
     
         {% for post in posts %}
             <div class="post-container">
@@ -232,7 +202,7 @@
                 </div>
 
                 <div class="post-photo">
-                    <img src={{post.content.url}} alt="" class="object-fit-contain">
+                    <img src={{post.content.url}} alt="" class="object-fit-contain js-post-content">
                 </div>
 
                 <div class="bottom-row">

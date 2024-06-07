@@ -7,20 +7,130 @@
     <title>Document</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="styles/general.css">
-    <link rel="stylesheet" href="styles/sidebar.css">
-    <link rel="stylesheet" href="styles/instagram.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     {% block styles %} {% endblock %}
 
+    <link rel="stylesheet" href="{% static 'instagram_home/login-modal.css' %}">
+    <link rel="stylesheet" href="{% static 'instagram_home/create-modal.css' %}">
     <link rel="stylesheet" href="{% static 'instagram_home/general.css' %}">
     <link rel="stylesheet" href="{% static 'instagram_home/sidebar.css' %}">
     <link rel="stylesheet" href="{% static 'instagram_home/instagram.css' %}">
-    
+
 </head>
 <body>
 
+    {% if user.is_authenticated %}
+    <div class="sidebar-container">
+        <div class="logo">
+            <img src="{% static 'icons/instagram-text-icon.png' %}" alt="" class="logo-icon">
+        </div>
+
+        <div class="sidebar-links-middle">
+            <a href="{% url 'home' %}">
+                <div class="sidebar-link">
+                    <img src="{% static 'icons/home.svg' %}" alt="" class="home-icon">
+                    <div class="active">Home</div>
+                </div>
+            </a>
+
+            <div class="sidebar-link">
+                <img src="{% static 'icons/search.svg' %}" alt="" class="search-icon">
+                <div>Search</div>
+            </div>
+            <div class="sidebar-link">
+                <img src="{% static 'icons/explore.svg' %}" alt="" class="explore-icon">
+                <div>Explore</div>
+            </div>
+            <div class="sidebar-link">
+                <img src="{% static 'icons/reel.png' %}" alt="" class="reels-icons">
+                <div>Reels</div>
+            </div>
+            <div class="sidebar-link">
+                <img src="{% static 'icons/send.svg' %}" alt="" class="messages-icon">
+                <div>Messages</div>
+            </div>
+            <div class="sidebar-link">
+                <img src="{% static 'icons/heart.svg' %}" alt="" class="notifications-icon">
+                <div>Notifications</div>
+            </div>
+            <div class="sidebar-link js-create-sidebar-link">
+                <img src="{% static 'icons/plus-square.svg' %}" alt="" class="create-icon">
+                <div>Create</div>
+            </div>
+            
+            <a href="{% url 'profile' user.username %}">
+                <div class="sidebar-link">
+                    <img src={{user.profile.image.url}} alt="" class="profile-pic">
+                    <div>Profile</div>
+                </div>
+            </a>
+
+            
+        </div>
+
+        <div class="sidebar-links-down">
+            <div class="sidebar-link">
+                <img src="{% static 'icons/threads.svg' %}" alt="">
+                <div>Threads</div>
+            </div>
+
+            <div class="sidebar-link">
+                <img src="{% static 'icons/hamburger-menu.svg' %}" alt="">
+                <div>More</div>
+            </div>
+        </div> 
+    </div>
+    {% endif %}
+
+    <!-- MODALS  -->
+    <div class="modal-container js-login-modal-container">
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button js-login-modal-close-button">&times;</span>
+                <img src="{% static 'icons/instagram-text-icon.png' %}" alt="Instagram" class="logo">
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="text" placeholder="username" name="username">
+                    <input type="password" placeholder="password" name="password">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="save-login">
+                        <label for="save-login">Save login info</label>
+                    </div>
+                    <button type="submit">Log in</button>
+                    <a href="#">Forgot password?</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="create-modal-container js-create-modal-container">
+        <div class="create-modal js-create-modal">
+        <div class="create-modal-content">
+            <div class="top-section">
+                <div class="create-new-post">Create new post</div>
+                <div class="create-modal-close-button js-create-modal-close-button">X</div>
+            </div>
+            
+            <div class="middle-content-container">
+                <div class="images-icon-container">
+                    <i class="bi bi-images images-icon"></i>
+                </div>
+                <div class="drag">Drag photos and videos here</div>
+                <form action="">
+                    <label class="custom-file-upload btn btn-primary">
+                        <input type="file"/>
+                        Select from computer
+                    </label>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
     
+    <div class="js-testing">sadasdasd</div>
+
+    <!-- END MODALS  -->
     
     {% block content %}
          
@@ -28,6 +138,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="{% static 'scripts/modals.js' %}"></script>
     {% block scripts %}
     {% endblock %}
 </body>

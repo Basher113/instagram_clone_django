@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from .forms import UserSignupForm
 from .models import Post
 
 # @login_required
@@ -38,6 +39,7 @@ def about(request):
     return render(request, 'instagram_home/about.html')
 
 def signup(request):
+    
     if request.method == 'POST':
         form = UserSignupForm(request.POST)
         if form.is_valid(): 

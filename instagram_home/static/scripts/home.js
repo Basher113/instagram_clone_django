@@ -7,26 +7,7 @@
 //     })
 // })
 
-$('.js-switch-button').click(() => {
-    $('.modal-container').show()
 
-    $('html, body').css({
-        overflow: 'hidden',
-        height: '100%',
-    });
-
-    $('.js-close-button').click(() => {
-        $('.modal-container').hide()
-
-        $('html, body').css({
-            overflow: 'auto',
-            height: 'auto'
-        });
-    })
-
-    
-
-})
 
 
 

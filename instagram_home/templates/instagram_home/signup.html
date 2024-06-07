@@ -64,7 +64,7 @@
 
         <div class="second-column">
             <div>Have an account? </div>
-            <a href="" class="text text-primary">Log in</a>
+            <a href="{% url 'home' %}" class="text text-primary">Log in</a>
         </div>
 
         <div>Get the app</div>
@@ -74,5 +74,10 @@
             <img src="{% static 'images/EHY6QnZYdNX.png' %}" alt="">
         </div>
     </div>
-    
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $('.sidebar-container').hide() // Just in case logged in user try to signup 
+    </script>
 {% endblock %}
