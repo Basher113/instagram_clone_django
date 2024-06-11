@@ -42,8 +42,8 @@
     margin-bottom: 20px;
 }
 
-form input[type="text"],
-form input[type="password"] {
+.modal-username,
+.modal-password {
     width: calc(100% - 40px);
     padding: 10px;
     margin: 5px 20px;
@@ -58,7 +58,7 @@ form .checkbox-container {
     margin: 10px 0;
 }
 
-form button {
+.modal-login-button {
     width: calc(100% - 40px);
     padding: 10px;
     margin: 10px 20px;
