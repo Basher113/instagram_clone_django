@@ -22,7 +22,7 @@ from user import views as user_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('instagram_home.urls'))
+    path('', include('instagram_home.urls')),
 ]
 
 if settings.DEBUG:

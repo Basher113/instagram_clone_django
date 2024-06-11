@@ -1,13 +1,13 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from .serializers import PostSerializer
+from rest_framework import generics
 from .forms import UserSignupForm
 from .models import Post
 
 # @login_required
 def home(request):
-
     # if no user is logged in then render login page
     if not request.user.is_authenticated:
         if request.method == 'POST':
@@ -54,3 +54,8 @@ def logout_user(request):
     return redirect('home')
 
 
+class PostList(generics.ListCreateAPIView):
+    queryset = Post.objects.all().order_by('-id')
+    serializer_class = PostSerializer
+
+    

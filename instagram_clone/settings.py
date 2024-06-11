@@ -41,7 +41,8 @@ INSTALLED_APPS = [
 
     # MY APPS
     'instagram_home',
-    'user'
+    'user',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
