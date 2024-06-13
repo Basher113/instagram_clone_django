@@ -107,24 +107,53 @@
     </div>
 
     <div class="create-modal-container js-create-modal-container">
+        <div class="create-modal-close-button js-create-modal-close-button">X</div>
         <div class="create-modal js-create-modal">
-        <div class="create-modal-content">
+        <div class="create-modal-content js-create-modal-content">
             <div class="top-section">
                 <div class="create-new-post">Create new post</div>
-                <div class="create-modal-close-button js-create-modal-close-button">X</div>
+                <div class="share-button js-share-button">Share</div>
             </div>
             
-            <div class="middle-content-container">
+            <div class="middle-content-container js-middle-content-container">
                 <div class="images-icon-container">
                     <i class="bi bi-images images-icon"></i>
                 </div>
                 <div class="drag">Drag photos and videos here</div>
-                <form action="">
-                    <label class="custom-file-upload btn btn-primary">
-                        <input type="file"/>
-                        Select from computer
-                    </label>
-                </form>
+                
+                <label for="create-image-input" class="custom-file-upload btn btn-primary">
+                    <input type="file" id="create-image-input" accept="image/*" hidden/>
+                    Select from computer
+                </label>
+            </div>
+
+            
+            <img src="" alt="" id="create-uploaded-image">
+
+            <div class="post-caption-container js-post-caption-container">
+                <div class="profile-post-container">
+                    <img src={{user.profile.image.url}} alt="" class="profile-in-caption">
+                    <div>{{user.username}}</div>
+                </div>
+
+                <div class="caption">
+                    <textarea name="" id="caption-content" placeholder="Write a caption"></textarea>
+                </div>
+
+                <div class="location-accessibility-advanced-settings">
+                    <div class="post-location">
+                        <input type="text" placeholder="Add location">
+                        <i class="bi bi-geo-alt location-icon"></i>
+                    </div>
+                    <div class="accessibility">
+                        <div>Accessibility</div>
+                        <i class="bi bi-chevron-down accessibility-icon"></i>
+                    </div>
+                    <div class="advanced-settings">
+                        <div>Advanced settings</div>
+                        <i class="bi bi-chevron-down down-icon"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -15,13 +15,10 @@ class CommentSerializer(serializers.ModelSerializer):
 class LikeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Like
-        fields = '__all__'
+        fields = ['id', 'user']
 
 
 class PostSerializer(serializers.ModelSerializer):
-
-    comments = CommentSerializer(read_only=True, many=True, source="comment_set")
-
     class Meta:
         model = Post
         fields = '__all__'

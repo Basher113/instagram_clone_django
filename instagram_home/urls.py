@@ -8,5 +8,6 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('logout/', views.logout_user, name='logout'),
     path('signup/', views.signup, name='signup'),
-    path('api_list/', views.PostList.as_view())
+    path('api/post-list/', views.PostList.as_view()),
+    path('api/create-post/', views.CreatePost.as_view(), name='create-post')
 ]

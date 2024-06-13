@@ -3,12 +3,17 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .serializers import PostSerializer
 from rest_framework import generics
-from .forms import UserSignupForm
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework import status
+
+from .forms import UserSignupForm, PostCreateForm
 from .models import Post
 
 # @login_required
 def home(request):
     # if no user is logged in then render login page
+    post_create_form = PostCreateForm()
     if not request.user.is_authenticated:
         if request.method == 'POST':
             username = request.POST['username']
@@ -54,8 +59,28 @@ def logout_user(request):
     return redirect('home')
 
 
-class PostList(generics.ListCreateAPIView):
+class PostList(generics.ListAPIView):
     queryset = Post.objects.all().order_by('-id')
     serializer_class = PostSerializer
 
+   
+
+class CreatePost(generics.CreateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+    def post(self, request, format=None):
+        serializer = PostSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        print(f"{serializer.errors} Hello?123")
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)
+
+
+
+
+
