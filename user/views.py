@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 def profile(request, username):
     viewing_user = get_object_or_404(User, username=username)
     
-    posts = Post.objects.filter(author=viewing_user)
+    posts = Post.objects.filter(author=viewing_user).order_by('-created_at')
     context = {
         'posts': posts,
         'current_user': request.user,

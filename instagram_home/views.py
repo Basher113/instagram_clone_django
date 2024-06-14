@@ -69,18 +69,22 @@ class CreatePost(generics.CreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)
+
     def post(self, request, format=None):
         serializer = PostSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
+            print('Hello? World!')
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         print(f"{serializer.errors} Hello?123")
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-    def perform_create(self, serializer):
-        serializer.save(author=self.request.user)
 
-
+class PostDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
 
 
 
