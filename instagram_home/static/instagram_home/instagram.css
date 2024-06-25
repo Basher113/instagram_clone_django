@@ -16,7 +16,7 @@ a {
     max-width: 500px;
     margin-bottom: 30px;
     margin-right: 150px;
-    
+
 }
 
 .my-day-container {
@@ -136,7 +136,7 @@ a {
     height: 600px;
     object-fit: cover;
     object-position: center;
-    box-shadow: -3px 2px  rgba(0, 0, 0, 0.13) ;
+    box-shadow: -3px 2px rgba(0, 0, 0, 0.13);
 }
 
 .bottom-row-first-row {
@@ -185,13 +185,14 @@ a {
     font-size: 14px;
     color: rgb(104, 104, 104);
     margin-bottom: 5px;
+    cursor: pointer;
 }
 
 .comment-form {
     display: flex;
 }
 
-.comment-input{
+.comment-input {
     font-size: 14px;
     border: none;
     flex: 1;

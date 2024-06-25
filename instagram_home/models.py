@@ -33,6 +33,6 @@ class Comment(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.user.username} - {self.content[:20]}"
+        return f"{self.author.username} - {self.content[:20]}"
 
 

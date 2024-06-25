@@ -103,3 +103,6 @@ imageInput.addEventListener('change', (event) => {
 $('.js-share-button').click(() => {
     createPost();
 })
+
+
+// Post detail X button

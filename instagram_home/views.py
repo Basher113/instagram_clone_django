@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .serializers import PostSerializer
+from .serializers import PostSerializer, UserSerializer
 from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -9,6 +9,7 @@ from rest_framework import status
 
 from .forms import UserSignupForm, PostCreateForm
 from .models import Post
+from django.contrib.auth.models import User
 
 # @login_required
 def home(request):
@@ -87,4 +88,6 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = PostSerializer
 
 
-
+class UserDetail(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
