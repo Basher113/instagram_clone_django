@@ -1,14 +1,14 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .serializers import PostSerializer, UserSerializer
+from .serializers import PostSerializer, UserSerializer, CommentSerializer, LikeSerializer
 from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
 
 from .forms import UserSignupForm, PostCreateForm
-from .models import Post
+from .models import Post, Comment
 from django.contrib.auth.models import User
 
 # @login_required
@@ -72,15 +72,6 @@ class CreatePost(generics.CreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
-
-    def post(self, request, format=None):
-        serializer = PostSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            print('Hello? World!')
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        print(f"{serializer.errors} Hello?123")
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
@@ -91,3 +82,11 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
 class UserDetail(generics.RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+
+class CreateComment(generics.CreateAPIView):
+    queryset = Comment.objects.all().order_by('-created_at')
+    serializer_class = CommentSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)

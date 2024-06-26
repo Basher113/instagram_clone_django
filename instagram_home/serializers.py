@@ -15,9 +15,9 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['id', 'username', 'profile']
 
 
-
 class CommentSerializer(serializers.ModelSerializer):
     author = UserSerializer(read_only=True, many=False)
+
     class Meta:
         model = Comment
         fields = '__all__'
@@ -29,8 +29,9 @@ class LikeSerializer(serializers.ModelSerializer):
 
 
 class PostSerializer(serializers.ModelSerializer):
-    comments = CommentSerializer(read_only=True, many=True, source="comment_set")
+    comments = CommentSerializer(read_only=True, many=True, source='comment_set')
     author = UserSerializer(read_only=True, many=False)
+    
     class Meta:
         model = Post
         fields = ['id', 'content', 'caption', 'created_at', 'author', 'comments']

@@ -11,4 +11,5 @@ urlpatterns = [
     path('api/post-list/', views.PostList.as_view()),
     path('api/create-post/', views.CreatePost.as_view(), name='create-post'),
     path('api/post-detail/<int:pk>/', views.PostDetail.as_view(), name='api-post-detail'),
+    path('api/create-comment/', views.CreateComment.as_view(), name='create-comment'),
 ]

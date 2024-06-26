@@ -6,7 +6,7 @@
 //         document.querySelector('.modal-container').style.display = 'none'
 //     })
 // })
-
+import { csrftoken } from "./utils.js";
 function renderPostDetail(postId) {
     $.ajax({
         type: 'GET',
@@ -39,12 +39,20 @@ function renderPostDetail(postId) {
 
                     <div class="post-detail-comment-input-container">
                         <i class="bi bi-emoji-smile post-detail-emoji-icon"></i>
-                        <input type="text" placeholder="Add a comment">
-                        <button type="submit">Post</button>
+                        <input type="text" placeholder="Add a comment" id="comment-input-${response.id}">
+                        <button type="submit" id="post-modal-comment-${response.id}">Post</button>
                     </div>
                 </div>
             `;
             document.querySelector('.js-post-modal-content').innerHTML = html;
+            $(`#post-modal-comment-${response.id}`).click(() => {
+                addComment(response.id)
+            })
+            $(`#comment-input-${response.id}`).keypress((event) => {
+                if (event.key === 'Enter') {
+                    addComment(response.id)
+                }
+            })
             $('.js-post-detail-modal').show()
         }
     })
@@ -55,12 +63,11 @@ function renderComments(comments) {
     // loop over comments
     let html = '';
     comments.forEach(async (comment) => {
-        console.log(comment.author)
         html +=
             `
             <div class="comment">
                 <img src="${comment.author.profile.image}" alt="User profile picture">
-                <p><strong>aaliani.05</strong> ${comment.content}</p>
+                <p><strong>${comment.author.username}</strong> ${comment.content}</p>
             </div>
             `
     })
@@ -78,4 +85,23 @@ $('.post-detail-close-button').click(() => {
     $('.js-post-detail-modal').hide()
 })
 
+
+// Add comments in Post Detail
+function addComment(postId) {
+    const commentInput = document.querySelector(`#comment-input-${postId}`)
+    const commentContent = commentInput.value
+    $.ajax({
+        type: 'POST',
+        url: 'http://127.0.0.1:8000/api/create-comment/',
+        data: {
+            post: postId,
+            content: commentContent,
+            csrfmiddlewaretoken: csrftoken
+        },
+        success: (response) => {
+            commentInput.value = '';
+            renderPostDetail(postId);
+        }
+    })
+}
 
