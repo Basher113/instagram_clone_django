@@ -209,9 +209,9 @@
                 <div class="bottom-row">
                     <div class="bottom-row-first-row">
                         <div class="like-comment-share-icon-container">
-                            <img src="{% static 'icons/heart.svg' %}" alt="">
-                            <img src="{% static 'icons/chat.svg' %}" alt="">
-                            <img src="{% static 'icons/send.svg' %}" alt="">
+                            <i class="bi bi-heart post-heart-icon"></i>
+                            <i class="bi bi-chat  post-chat-icon"></i>
+                            <i class="bi bi-send  post-send-icon"></i>
                         </div>
                         
                         <div class="save-icon-conatiner">
@@ -219,7 +219,7 @@
                         </div>
                     </div>
 
-                    <div class="likes-count">106,850 likes</div>
+                    <div class="likes-count">{{post.likes_count}} likes</div>
 
                     <div class="author-and-caption">
                         <div class="author-username">{{post.author.username}} <img src="icons/social-media.png" alt="" class="verified-icon"> </div>

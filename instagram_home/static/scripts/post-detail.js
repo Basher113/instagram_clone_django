@@ -27,7 +27,7 @@ function renderPostDetail(postId) {
                         </div>
                     </div>
                     
-                    <div class="likes">46,622 likes</div>
+                    <div class="likes">${response.likes_count} likes</div>
 
                     <div class="post-detail-comment-input-container">
                         <i class="bi bi-emoji-smile post-detail-emoji-icon"></i>

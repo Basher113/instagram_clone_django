@@ -145,8 +145,10 @@ a {
     margin-bottom: 13px;
 }
 
-.like-comment-share-icon-container img {
-    height: 22px;
+.post-heart-icon,
+.post-chat-icon,
+.post-send-icon {
+    font-size: 24px;
     margin-right: 15px;
 }
 
