@@ -29,7 +29,7 @@ class LikeSerializer(serializers.ModelSerializer):
 
 
 class PostSerializer(serializers.ModelSerializer):
-    comments = CommentSerializer(read_only=True, many=True, source='comment_set')
+    comments = CommentSerializer(read_only=True, many=True)
     author = UserSerializer(read_only=True, many=False)
     
     class Meta:
